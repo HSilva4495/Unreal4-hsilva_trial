@@ -26,10 +26,10 @@ class HSILVA_TRIAL_API ABatteryMan : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ABatteryMan();
-
+    //third person camera
      UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
          USpringArmComponent* CameraBoom;
-
+     //follows a camera 
      UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
          UCameraComponent* FollowCamera; 
 
