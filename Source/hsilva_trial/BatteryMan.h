@@ -33,6 +33,13 @@ public:
      UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
          UCameraComponent* FollowCamera; 
 
+     //Starting from here it would dictate the movement of the character in question
+     void MoveForward(float Axis);
+     void MoveRight(float Axis);
+     
+     //determines end dead game condition
+     bool bDead; 
+
     
 
 protected:

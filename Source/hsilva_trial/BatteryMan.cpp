@@ -35,12 +35,11 @@ ABatteryMan::ABatteryMan()
      FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
      FollowCamera->bUsePawnControlRotation = false; 
 
-
-
-
-
+     //condition Dead
+     bDead = false; 
 
 }
+
 
 // Called when the game starts or when spawned
 void ABatteryMan::BeginPlay()
@@ -59,7 +58,26 @@ void ABatteryMan::Tick(float DeltaTime)
 // Called to bind functionality to input
 void ABatteryMan::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
+    //bind inputs 
+     // In Unreal Engine the input are under settings->input-> bindings-> Action Mapping
+
+    Super::SetupPlayerInputComponent(PlayerInputComponent);
+    PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
+    PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerYawInput);
+    
+    PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump); 
+    PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+
+   
 
 }
 
+void ABatteryMan::MoveForward(float Axis)
+{
+
+}
+
+void ABatteryMan::MoveRight(float Axis)
+{
+
+}
