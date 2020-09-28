@@ -37,6 +37,8 @@ ABatteryMan::ABatteryMan()
 
      //condition Dead
      bDead = false; 
+     Power = 100.0f;  
+
 
 }
 
@@ -114,7 +116,15 @@ void ABatteryMan::OnBeginOverlap(UPrimitiveComponent * HitComp,
 
     if (OtherActor->ActorHasTag("Recharge")) {
         
-        UE_LOG(LogTemp, Warning, TEXT("Collided with"));
+        //this is used to check for collision
+       // UE_LOG(LogTemp, Warning, TEXT("Collided with"));
+
+        Power += 10.0f;
+
+        if (Power > 100.0f)
+            Power = 100.0f;
+
+            OtherActor->Destroy(); 
 
     }
 
