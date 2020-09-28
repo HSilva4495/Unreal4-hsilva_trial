@@ -40,7 +40,20 @@ public:
      //determines end dead game condition
      bool bDead; 
 
-    
+    //declare item prop
+
+     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+         float Power;
+     
+     UPROPERTY(EditAnywhere)
+         float Power_Treshold; 
+     
+     UFUNCTION()
+         void OnBeginOverlap(class UPrimitiveComponent* HitComp,
+             class AActor* OtherActor, class UPrimitiveComponent* OtherComp,
+             int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+
+
 
 protected:
 	// Called when the game starts or when spawned
