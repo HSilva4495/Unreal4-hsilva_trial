@@ -42,6 +42,7 @@ public:
 
     //declare item prop
 
+     //this line allows us to see the power node in blueprint menu in unreal
      UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
          float Power;
      
@@ -57,7 +58,7 @@ public:
          TSubclassOf<UUserWidget> Player_Power_Widget_Class;
         UUserWidget* Player_Power_Widget; 
 
-
+        void RestartGame();
 
 
 protected:
