@@ -48,6 +48,9 @@ void ABatteryMan::BeginPlay()
 {
 	Super::BeginPlay();
 	
+     //bind capsule componenets
+     GetCapsuleComponent() ->OnComponentBeginOverlap.AddDynamic(this, &ABatteryMan::OnBeginOverlap);
+
 }
 
 // Called every frame
