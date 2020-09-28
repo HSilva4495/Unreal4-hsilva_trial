@@ -53,6 +53,15 @@ void ABatteryMan::BeginPlay()
      //bind capsule componenets
      GetCapsuleComponent() ->OnComponentBeginOverlap.AddDynamic(this, &ABatteryMan::OnBeginOverlap);
 
+     //this is a test to see if the widget it attached propperly on hsilva_trialBuild.cs
+     if (Player_Power_Widget_Class != nullptr) {
+         
+         Player_Power_Widget = CreateWidget(GetWorld(), Player_Power_Widget_Class);
+         Player_Power_Widget->AddToViewport();
+         
+
+     }
+
 }
 
 // Called every frame
