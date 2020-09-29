@@ -81,8 +81,7 @@ void ABatteryMan::Tick(float DeltaTime)
              GetMesh()->SetSimulatePhysics(true);
              
              FTimerHandle UnusedHandle;
-             GetWorldTimerManager().SetTimer(
-                 UnusedHandle, this, &ABatteryMan::RestartGame, 3.0f, false); 
+             GetWorldTimerManager().SetTimer(UnusedHandle, this, &ABatteryMan::RestartGame, 3.0f, false); 
 
 
          }
